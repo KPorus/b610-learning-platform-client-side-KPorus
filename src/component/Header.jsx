@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className='drawer sm:h-[87px]'>
+    <div className='drawer sm:h-[64px] h-[65px]'>
       <input id='my-drawer-3' type='checkbox' className='drawer-toggle' />
       <div className='drawer-content flex flex-col'>
         <div className='w-full navbar bg-base-300'>
