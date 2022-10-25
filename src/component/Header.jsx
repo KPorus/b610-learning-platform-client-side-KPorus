@@ -1,14 +1,7 @@
 import React from "react";
-import { IoIosMenu, IoMdClose } from "react-icons/io";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [state, setstate] = useState(false);
-
-  let navBtn = (state) => {
-    setstate(!state);
-  };
   return (
     <div className='navbar bg-base-100'>
       <div className='navbar-start'>
