@@ -6,11 +6,13 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { toast } from 'react-hot-toast';
 import { AuthContext } from "./Context/AuthProvider/AuthProvider";
 
+
 const Login = () => {
+  const [email , setemail] = useState("")
   const navigate = useNavigate();
   const location = useLocation();
-
-  const { googleLogin, login, setLoading,setUser } = useContext(AuthContext);
+  const from = location.state?.from?.pathname || '/';
+  const { googleLogin, login, setLoading, setUser, forgetPassword } = useContext(AuthContext);
 
 
   const [userInfo, setUserInfo] = useState({
@@ -63,16 +65,14 @@ const Login = () => {
     if (lengthError) {
       setErrors({ ...errors, password: "Must be at least 6 characters" });
       setUserInfo({ ...userInfo, password: "" });
-    } 
-    else if(noSymbolError)
-    {
-      setErrors({...errors,password:"Must have a unique number"});
-      setUserInfo({...userInfo,password:" "});
     }
-    else if(noCapitalLetterError)
-    {
-      setErrors({...errors,password:"Must have a capital letter"});
-      setUserInfo({...userInfo,password:" "});
+    else if (noSymbolError) {
+      setErrors({ ...errors, password: "Must have a unique number" });
+      setUserInfo({ ...userInfo, password: " " });
+    }
+    else if (noCapitalLetterError) {
+      setErrors({ ...errors, password: "Must have a capital letter" });
+      setUserInfo({ ...userInfo, password: " " });
     }
     else {
       setErrors({ ...errors, password: "" });
@@ -94,7 +94,22 @@ const Login = () => {
       });
   }
 
-  
+  let resetPass = ()=>
+  {
+    setLoading(true);
+    forgetPassword(userInfo.email)
+    .then(() => {
+      // Password reset email sent!
+      // ..
+      toast.success("Check your Mail. Reset password mail has been sent")
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      setErrors({ ...errors, general: "errorMessage" });
+      // ..
+    });
+  }
+
   return (
     <div className='hero min-h-screen bg-base-200'>
       <div className='hero-content flex-col lg:flex-row-reverse'>
@@ -134,15 +149,23 @@ const Login = () => {
                 required
                 onChange={handlePasswordChange}
               />
-               {errors.password && <p className="text-red-600">{errors.password}</p>}
+              {errors.password && <p className="text-red-600">{errors.password}</p>}
               <label className='label'>
-
-                Forgot password?
-
+                <a href="#my-modal-2" className="btn">Forgot password?</a>
+                <div className="modal" id="my-modal-2">
+                  <div className="modal-box">
+                    <h3 className="font-bold text-lg">Reset Password!!</h3>
+                    <p className="py-4">Click the reset button to reset password</p>
+                    <div className="modal-action">
+                      <a href="#" className="btn" onClick={resetPass}>Reset Password</a>
+                    </div>
+                  </div>
+                </div>
               </label>
               <small> <Link to="/reg">New here!! Create New Account</Link></small>
             </div>
             <div className='form-control mt-6'>
+              {errors.general && <p className="text-red-600">{errors.general}</p>}
               <button className='btn btn-primary'>Login</button>
               <button className="btn btn-accent mt-2" onClick={handleGoogleLogin}><FcGoogle className="text-2xl mr-2"></FcGoogle>Google Login</button>
             </div>

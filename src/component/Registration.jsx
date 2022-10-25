@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useState } from "react";
+import { toast } from 'react-hot-toast';
 import { AuthContext } from "./Context/AuthProvider/AuthProvider";
 import { Link } from 'react-router-dom';
 
@@ -15,7 +16,7 @@ const Registration = () => {
   });
 
   const [accepted, setAccepted] = useState(false);
-  const {  createUser, setLoading } = useContext(AuthContext);
+  const {  createUser, setLoading, verifyEmail } = useContext(AuthContext);
 
   let handleLogin = (e) => {
     e.preventDefault();
@@ -26,8 +27,9 @@ const Registration = () => {
     createUser(email, password)
       .then(result => {
         const user = result.user;
-        user.displayName = name;
         setLoading(true)
+        user.displayName = name;
+        verify();
         e.target.reset();
       })
       .catch(error => {
@@ -78,6 +80,14 @@ const Registration = () => {
   {
     setAccepted(e.target.checked)
   }
+
+
+  let verify = ()=>
+  {
+    verifyEmail();
+    toast("Check your Mail. And active the verification.")
+  }
+
     return (
         <div className='hero min-h-screen bg-base-200' onSubmit={handleLogin}>
       <div className='hero-content flex-col lg:flex-row-reverse'>
@@ -128,11 +138,7 @@ const Registration = () => {
                 onChange={handlePasswordChange}
               />
               {errors.password && <p className="text-red-600">{errors.password}</p>}
-              <label className='label'>
-                <a href='#' className='label-text-alt link link-hover'>
-                  Forgot password?
-                </a>
-              </label>
+             
              <small> <Link to="/login">Already have a account!! Login</Link></small>
              <div className="flex text-xl">
              <input
