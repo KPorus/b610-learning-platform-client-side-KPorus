@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { toast } from 'react-hot-toast';
 import { AuthContext } from "./Context/AuthProvider/AuthProvider";
 
 const Header = () => {
@@ -10,6 +11,7 @@ const Header = () => {
     usersignOut()
     .then(()=>{
       //signout
+      toast.success("Logout successfull!")
     })
     .catch(error =>{
       console.error(error);
@@ -57,7 +59,7 @@ const Header = () => {
         </div>
       </div>
       <div className='navbar-center'>
-        <a className='btn btn-ghost normal-case text-xl'>
+        <div className='btn btn-ghost normal-case text-xl'>
           <Link to='/' className="flex items-center">
             <img
               src='https://img.icons8.com/fluency/48/000000/student-center.png'
@@ -65,7 +67,7 @@ const Header = () => {
             />
             Student Center
           </Link>
-        </a>
+        </div>
       </div>
       <div className='navbar-end'>
         <button className='btn btn-ghost btn-square p-2 mr-9 w-[60px]'>
