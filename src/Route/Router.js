@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../component/Blog";
+import CheckOut from "../component/CheckOut";
 import Courses from "../component/Courses";
 import ErrorPage from "../component/ErrorPage";
 import FAQ from "../component/FAQ";
@@ -15,12 +16,24 @@ let route = createBrowserRouter([
         element:<Main></Main>,
         errorElement: <ErrorPage />,
         children : [
-            {path:"/",element:<Home></Home>},
-            {path:"/courses",element:<Courses></Courses>},
+            {
+                path:"/",
+                element:<Home></Home>,
+                loader:async ()=>{return fetch("http://localhost:5000/")}
+            },
+            {
+                path:"/courses",
+                element:<Courses></Courses>,
+                loader: async ()=>
+                {
+                    return fetch('http://localhost:5000/allcourses');
+                }
+            },
             {path:"/faq",element:<FAQ></FAQ>},
             {path:"/blog",element:<Blog></Blog>},
             {path:"/login",element:<Login></Login>},
             {path:"/reg",element:<Registration></Registration>},
+            {path:"/check-out",element:<CheckOut></CheckOut>},
         ]
     }
 ]);

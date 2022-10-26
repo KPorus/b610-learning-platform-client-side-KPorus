@@ -8,7 +8,6 @@ import { AuthContext } from "./Context/AuthProvider/AuthProvider";
 
 
 const Login = () => {
-  const [email , setemail] = useState("")
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
@@ -105,7 +104,7 @@ const Login = () => {
     })
     .catch((error) => {
       const errorMessage = error.message;
-      setErrors({ ...errors, general: "errorMessage" });
+      setErrors({ ...errors, general: errorMessage });
       // ..
     });
   }

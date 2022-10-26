@@ -51,10 +51,21 @@ const Header = () => {
             <li>
               <Link to='/blog'>Blog</Link>
             </li>
-            <li>
+            <li className="sm:block hidden">
               <Link to='/login'>Login</Link>
             </li>
-           
+            <div className='navbar-end sm:hidden'>
+        <button className='btn btn-ghost btn-square p-2 mr-9 w-[60px]'>
+          {user ? <button className="uppercase" onClick={handleSignOut}>LogOut</button> : <Link to='/login'>Login</Link>}
+        </button>
+        <button className='btn btn-ghost btn-circle'>
+        <div className='avatar placeholder'>
+              <div className='bg-neutral-focus text-neutral-content rounded-full w-12'>
+                {user?.photoURL ? <img src={user.photoURL} alt='user'></img>  : <span>MX</span>}
+              </div>
+            </div>
+        </button>
+      </div>
           </ul>
         </div>
       </div>
@@ -69,19 +80,19 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <div className='navbar-end'>
-        <button className='btn btn-ghost btn-square p-2 mr-9 w-[60px]'>
+      <div className='navbar-end '>
+        <button className='btn btn-ghost btn-square p-2 mr-9 w-[60px] sm:block hidden'>
           {user ? <button className="uppercase" onClick={handleSignOut}>LogOut</button> : <Link to='/login'>Login</Link>}
         </button>
-        <button className='btn btn-ghost btn-circle'>
+        <button className='btn btn-ghost btn-circle sm:block hidden'>
         <div className='avatar placeholder'>
-              <div className='bg-neutral-focus text-neutral-content rounded-full w-12'>
+              <div className='bg-neutral-focus text-neutral-content rounded-full w-12 '>
                 {user?.photoURL ? <img src={user.photoURL} alt='user'></img>  : <span>MX</span>}
               </div>
             </div>
         </button>
       </div>
-    </div>
+      </div>
   );
 };
 

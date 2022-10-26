@@ -1,8 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext} from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "./Context/AuthProvider/AuthProvider";
 import Login from "./Login";
 
 const Home = () => {
+    const {user} = useContext(AuthContext);
+    let data = useLoaderData()
     return (
         <div>
             <div
@@ -33,38 +36,38 @@ const Home = () => {
             <div className="flex mx-32 gap-2 p-4">
                 <div className='card card-compact w-96 bg-base-200 shadow-xl'>
                     <figure>
-                        <img src='https://placeimg.com/400/225/arch' alt='Shoes' />
+                        <img src={data[0].image} alt='Shoes' />
                     </figure>
                     <div className='card-body'>
-                        <h2 className='card-title'>Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <h2 className='card-title'>{data[0].title}</h2>
+                        <p>{data[0].description}</p>
                         <div className='card-actions justify-end'>
-                            <button className='btn btn-primary'>Buy Now</button>
+                        <Link to={`${user ? "check-out" :  "/reg"}`}><button className='btn btn-primary'>Get Access</button></Link>
                         </div>
                     </div>
                 </div>
                 <div className='card card-compact w-96 bg-base-200 shadow-xl'>
                     <figure>
-                        <img src='https://placeimg.com/400/225/arch' alt='Shoes' />
+                        <img src={data[1].image} alt='Shoes' />
                     </figure>
                     <div className='card-body'>
-                        <h2 className='card-title'>Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <h2 className='card-title'>{data[1].title}</h2>
+                        <p>{data[1].description}</p>
                         <div className='card-actions justify-end'>
-                            <button className='btn btn-primary'>Buy Now</button>
+                        <Link to={`${user ? "check-out" :  "/reg"}`}><button className='btn btn-primary'>Get Access</button></Link>
                         </div>
                     </div>
                 </div>
 
                 <div className='card card-compact w-96 bg-base-200 shadow-xl'>
                     <figure>
-                        <img src='https://placeimg.com/400/225/arch' alt='Shoes' />
+                        <img src={data[2].image} alt='Shoes' />
                     </figure>
                     <div className='card-body'>
-                        <h2 className='card-title'>Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <h2 className='card-title'>{data[2].title}</h2>
+                        <p>{data[2].description}</p>
                         <div className='card-actions justify-end'>
-                            <button className='btn btn-primary'>Buy Now</button>
+                            <Link to={`${user ? "check-out" :  "/reg"}`}><button className='btn btn-primary'>Get Access</button></Link>
                         </div>
                     </div>
                 </div>
