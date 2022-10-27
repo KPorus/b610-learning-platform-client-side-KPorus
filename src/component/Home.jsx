@@ -78,12 +78,12 @@ const Home = () => {
                 <Link to='/courses'> <button className="btn btn-active btn-primary">Courses List</button></Link>
             </div>
 
-            <div>
+            {/* <div>
                 <div className="w-2/4 mb-[-200px] m-auto">
                 <h1 className="text-center mt-5 font-bold font-sans text-4xl">Here is some frequantly asked question.</h1>
                     <FAQ></FAQ>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

@@ -4,18 +4,17 @@ import { toast } from 'react-hot-toast';
 import { AuthContext } from "./Context/AuthProvider/AuthProvider";
 
 const Header = () => {
-  const {user,usersignOut} = useContext(AuthContext);
+  const { user, usersignOut } = useContext(AuthContext);
 
-  let handleSignOut =()=>
-  {
+  let handleSignOut = () => {
     usersignOut()
-    .then(()=>{
-      //signout
-      toast.success("Logout successfull!")
-    })
-    .catch(error =>{
-      console.error(error);
-    })
+      .then(() => {
+        //signout
+        toast.success("Logout successfull!")
+      })
+      .catch(error => {
+        console.error(error);
+      })
   }
   return (
     <div className='navbar bg-base-100'>
@@ -55,17 +54,23 @@ const Header = () => {
               <Link to='/login'>Login</Link>
             </li>
             <div className='navbar-end sm:hidden'>
-        <button className='btn btn-ghost btn-square p-2 mr-9 w-[60px]'>
-          {user ? <button className="uppercase" onClick={handleSignOut}>LogOut</button> : <Link to='/login'>Login</Link>}
-        </button>
-        <button className='btn btn-ghost btn-circle'>
-        <div className='avatar placeholder'>
-              <div className='bg-neutral-focus text-neutral-content rounded-full w-12'>
-                {user?.photoURL ? <img src={user.photoURL} alt='user'></img>  : <span>MX</span>}
-              </div>
+              <button className='btn btn-ghost btn-square p-2 mr-9 w-[60px]'>
+                {user ? <button className="uppercase" onClick={handleSignOut}>LogOut</button> : <Link to='/login'>Login</Link>}
+              </button>
+              <button className='btn btn-ghost btn-circle'>
+                <div className='avatar placeholder'>
+                  <div className='bg-neutral-focus text-neutral-content rounded-full w-12'>
+                 
+                 {user?.photoURL ? <img src={user.photoURL} alt='user'></img> : <span>MX</span>}
+                    
+                  </div>
+                </div>
+              </button>
+
+              
+
+
             </div>
-        </button>
-      </div>
           </ul>
         </div>
       </div>
@@ -85,14 +90,14 @@ const Header = () => {
           {user ? <button className="uppercase" onClick={handleSignOut}>LogOut</button> : <Link to='/login'>Login</Link>}
         </button>
         <button className='btn btn-ghost btn-circle sm:block hidden'>
-        <div className='avatar placeholder'>
-              <div className='bg-neutral-focus text-neutral-content rounded-full w-12 '>
-                {user?.photoURL ? <img src={user.photoURL} alt='user'></img>  : <span>MX</span>}
-              </div>
+          <div className='avatar placeholder'>
+            <div className='bg-neutral-focus text-neutral-content rounded-full w-12 '>
+              {user?.photoURL ? <img src={user.photoURL} alt='user'></img> : <span>MX</span>}
             </div>
+          </div>
         </button>
       </div>
-      </div>
+    </div>
   );
 };
 

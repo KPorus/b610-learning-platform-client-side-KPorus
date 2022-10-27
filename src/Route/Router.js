@@ -9,6 +9,8 @@ import Home from "../component/Home";
 import Login from "../component/Login";
 import Registration from "../component/Registration";
 import Main from "../layout/Main";
+import CourseExplain from "../component/CourseExplain";
+import PrivateRoute from "./Private";
 
 let route = createBrowserRouter([
     {
@@ -23,18 +25,26 @@ let route = createBrowserRouter([
             },
             {
                 path:"/courses",
-                element:<Courses></Courses>,
+                element:<PrivateRoute><Courses></Courses></PrivateRoute>,
                 loader: async ()=>
                 {
                     return fetch('http://localhost:5000/allcourses');
                 }
             },
             {
-                path:"/courses/:id",
+                path:"/allcourses/:catagory_id",
                 element:<WebCourse></WebCourse>,
-                loader: async ({params})=>
+                loader: async ({catagory_id})=>
                 {
-                    return fetch(`http://localhost:5000/allcourses/${params.catagory_id}`);
+                    return fetch(`http://localhost:5000/allcourses/${catagory_id}`);
+                }
+            },
+            {
+                path:"/course-detail/:id",
+                element:<CourseExplain></CourseExplain>,
+                loader: async ({id})=>
+                {
+                    return fetch(`http://localhost:5000/course-detail/${id}`);
                 }
             },
             {path:"/faq",element:<FAQ></FAQ>},

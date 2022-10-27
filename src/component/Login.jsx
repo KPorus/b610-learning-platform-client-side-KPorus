@@ -34,8 +34,7 @@ const Login = () => {
         setLoading(true)
         setUser(user);
         e.target.reset();
-        console.log(location.state.from);
-        navigate(location?.state?.from?.pathname);
+        navigate(from, {replace: true});
       })
       .catch((err) => {
         console.log(err);
@@ -86,6 +85,7 @@ const Login = () => {
         const user = result.user;
         console.log(user)
         toast.success("Login successfull!")
+        navigate(from, {replace: true});
         // ...
       }).catch((error) => {
         console.log(error);

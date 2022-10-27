@@ -4,7 +4,7 @@ import Course from './Course';
 const CourseDetail = (props) => {
     let course = props.product;
     return (
-        <div className='grid grid-cols-2'>
+        <div className='grid sm:grid-cols-2'>
             {
                 course.map(data => <Course data={data} key={data.id}></Course>)
             }
