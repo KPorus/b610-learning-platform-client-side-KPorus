@@ -15,7 +15,7 @@ const CheckOut = () => {
                         <p className="py-6">Please fill up the check out form to 
                         get access of the course.</p>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full md:max-w-sm shadow-2xl bg-base-100 max-w-[14rem]">
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">
