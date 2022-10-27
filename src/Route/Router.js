@@ -4,7 +4,7 @@ import CheckOut from "../component/CheckOut";
 import Courses from "../component/Courses";
 import ErrorPage from "../component/ErrorPage";
 import FAQ from "../component/FAQ";
-import Faq from "../component/FAQ";
+import WebCourse from "../component/WebCourse";
 import Home from "../component/Home";
 import Login from "../component/Login";
 import Registration from "../component/Registration";
@@ -27,6 +27,14 @@ let route = createBrowserRouter([
                 loader: async ()=>
                 {
                     return fetch('http://localhost:5000/allcourses');
+                }
+            },
+            {
+                path:"/courses/:id",
+                element:<WebCourse></WebCourse>,
+                loader: async ({params})=>
+                {
+                    return fetch(`http://localhost:5000/allcourses/${params.catagory_id}`);
                 }
             },
             {path:"/faq",element:<FAQ></FAQ>},

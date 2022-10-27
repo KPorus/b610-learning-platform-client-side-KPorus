@@ -3,7 +3,6 @@ import Course from './Course';
 
 const CourseDetail = (props) => {
     let course = props.product;
-    console.log(course);
     return (
         <div className='grid grid-cols-2'>
             {

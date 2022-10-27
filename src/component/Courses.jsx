@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import CourseDetail from './CourseDetail';
 
 const Courses = () => {
@@ -11,14 +11,13 @@ const Courses = () => {
     // }, []);
 
     let alldata = useLoaderData()
-
+    let id = {alldata}
     return (
         <div className='m-6 flex'>
             <div className='w-1/4'>
                 <div className="btn-group btn-group-vertical">
-                    <button className="btn btn-active">Button</button>
-                    <button className="btn">Button</button>
-                    <button className="btn">Button</button>
+                    <Link to={`/courses/${id.alldata[0].catagory_id}`}><button className="btn">Web Development</button></Link>
+                    <Link to={`/courses/${id.alldata[2].catagory_id}`}><button className="btn">Programing</button></Link>
                 </div>
             </div>
             <div className="w-9/12 ">

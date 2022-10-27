@@ -13,6 +13,7 @@ const Registration = () => {
   const [errors, setErrors] = useState({
     email: "",
     password: "",
+    general:""
   });
 
   const [accepted, setAccepted] = useState(false);
@@ -34,6 +35,7 @@ const Registration = () => {
       })
       .catch(error => {
         console.error(error)
+        setErrors({ ...errors, general: error.message });
       })
   }
 
@@ -151,6 +153,7 @@ const Registration = () => {
               </label>
              </div>
             </div>
+            {errors.general && <p className="text-red-600">{errors.general}</p>}
             <div className='form-control mt-6'>
               <button className='btn btn-primary'  disabled={!accepted}>Submit</button>
             </div>

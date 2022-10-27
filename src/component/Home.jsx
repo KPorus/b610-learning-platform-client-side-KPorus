@@ -1,5 +1,6 @@
 import React, { useContext} from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import FAQ from "./FAQ"
 import { AuthContext } from "./Context/AuthProvider/AuthProvider";
 import Login from "./Login";
 
@@ -75,6 +76,13 @@ const Home = () => {
             </div>
             <div className="flex justify-around m-2">
                 <Link to='/courses'> <button className="btn btn-active btn-primary">Courses List</button></Link>
+            </div>
+
+            <div>
+                <div className="w-2/4 mb-[-200px] m-auto">
+                <h1 className="text-center mt-5 font-bold font-sans text-4xl">Here is some frequantly asked question.</h1>
+                    <FAQ></FAQ>
+                </div>
             </div>
         </div>
     );
