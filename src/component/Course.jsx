@@ -14,7 +14,7 @@ const Course = ({ data }) => {
                 <p>{description}</p>
                 <div className='card-actions justify-end'>
                 <Link to={`/course-detail/${id}`}><button className='btn btn-primary'>View More</button></Link>
-                     <Link to="/check-out"><button className='btn btn-primary'>Get Access</button></Link>
+                     <Link to="/check-out" ><button className='btn btn-primary'>Get Access</button></Link>
                 </div>
             </div>
         </div>
