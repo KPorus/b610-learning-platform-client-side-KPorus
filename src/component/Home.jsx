@@ -8,7 +8,7 @@ const Home = () => {
     const {user} = useContext(AuthContext);
     let data = useLoaderData()
     return (
-        <div>
+        <div className="md:m-4">
             <div
                 className='hero min-h-screen'
                 style={{
@@ -34,8 +34,8 @@ const Home = () => {
                 <Login></Login>
             </div>
             <h1 className="text-center font-bold font-[Lato] text-4xl m-2">Course Summary</h1>
-            <div className="flex mx-32 gap-2 p-4">
-                <div className='card card-compact w-96 bg-base-200 shadow-xl'>
+            <div className="sm:flex sm:mx-32 ml-[1rem]  gap-2 p-4">
+                <div className='card card-compact md:w-96 mb-[2rem] bg-base-200 shadow-xl'>
                     <figure>
                         <img src={data[0].image} alt='Shoes' />
                     </figure>
@@ -47,7 +47,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='card card-compact w-96 bg-base-200 shadow-xl'>
+                <div className='card card-compact mb-[2rem] md:w-96 bg-base-200 shadow-xl'>
                     <figure>
                         <img src={data[1].image} alt='Shoes' />
                     </figure>
@@ -60,7 +60,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='card card-compact w-96 bg-base-200 shadow-xl'>
+                <div className='card card-compact md:w-96 mb-[2rem] bg-base-200 shadow-xl'>
                     <figure>
                         <img src={data[2].image} alt='Shoes' />
                     </figure>

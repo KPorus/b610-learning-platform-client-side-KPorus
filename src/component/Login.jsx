@@ -110,17 +110,17 @@ const Login = () => {
   }
 
   return (
-    <div className='hero min-h-screen bg-base-200'>
+    <div className='hero min-h-screen sm:bg-base-200'>
       <div className='hero-content flex-col lg:flex-row-reverse'>
         <div className='text-center lg:textcenter'>
-          <h1 className='text-5xl font-bold'>Login now!</h1>
+          <h1 className='sm:text-5xl text-3xl font-bold'>Login now!</h1>
           <p className='py-6'>
             Welcome to student center.
             Build your career with us.
             Login Now to use our content.
           </p>
         </div>
-        <form className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100' onSubmit={handleSubmit}>
+        <form className='card flex-shrink-0 sm:w-full w-[72%] max-w-sm shadow-2xl bg-base-100' onSubmit={handleSubmit}>
           <div className='card-body'>
             <div className='form-control'>
               <label className='label'>
@@ -149,7 +149,7 @@ const Login = () => {
                 onChange={handlePasswordChange}
               />
               {errors.password && <p className="text-red-600">{errors.password}</p>}
-              <label className='label'>
+              <label className='sm:flex sm:px-1 sm:py-2 sm:justify-between sm:items-center py-2 font-medium'>
                 <a href="#my-modal-2" className="btn">Forgot password?</a>
                 <div className="modal" id="my-modal-2">
                   <div className="modal-box">

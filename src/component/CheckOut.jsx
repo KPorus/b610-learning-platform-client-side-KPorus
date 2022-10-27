@@ -11,9 +11,9 @@ const CheckOut = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-center">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <h1 className="text-5xl font-bold">Get Access Now!</h1>
                         <p className="py-6">Please fill up the check out form to 
-                        get acsess of the course.</p>
+                        get access of the course.</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
