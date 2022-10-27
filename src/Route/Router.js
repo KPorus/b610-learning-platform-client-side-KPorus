@@ -34,17 +34,17 @@ let route = createBrowserRouter([
             {
                 path:"/allcourses/:catagory_id",
                 element:<WebCourse></WebCourse>,
-                loader: async ({catagory_id})=>
+                loader: async ({params})=>
                 {
-                    return fetch(`http://localhost:5000/allcourses/${catagory_id}`);
+                    return fetch(`http://localhost:5000/allcourses/${params.catagory_id}`);
                 }
             },
             {
                 path:"/course-detail/:id",
                 element:<CourseExplain></CourseExplain>,
-                loader: async ({id})=>
+                loader: async ({params})=>
                 {
-                    return fetch(`http://localhost:5000/course-detail/${id}`);
+                    return fetch(`http://localhost:5000/course-detail/${params.id}`);
                 }
             },
             {path:"/faq",element:<FAQ></FAQ>},
