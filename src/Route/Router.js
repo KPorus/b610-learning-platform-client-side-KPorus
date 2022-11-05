@@ -21,14 +21,14 @@ let route = createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>,
-                loader:async ()=>{return fetch("http://localhost:5000/")}
+                loader:async ()=>{return fetch("https://b610-lerning-platform-server-side-kp-orus.vercel.app/")}
             },
             {
                 path:"/courses",
                 element:<PrivateRoute><Courses></Courses></PrivateRoute>,
                 loader: async ()=>
                 {
-                    return fetch('http://localhost:5000/allcourses');
+                    return fetch('https://b610-lerning-platform-server-side-kp-orus.vercel.app/allcourses');
                 }
             },
             {
@@ -36,7 +36,7 @@ let route = createBrowserRouter([
                 element:<WebCourse></WebCourse>,
                 loader: async ({params})=>
                 {
-                    return fetch(`http://localhost:5000/allcourses/${params.catagory_id}`);
+                    return fetch(`https://b610-lerning-platform-server-side-kp-orus.vercel.app/allcourses/${params.catagory_id}`);
                 }
             },
             {
@@ -44,7 +44,7 @@ let route = createBrowserRouter([
                 element:<CourseExplain></CourseExplain>,
                 loader: async ({params})=>
                 {
-                    return fetch(`http://localhost:5000/course-detail/${params.id}`);
+                    return fetch(`https://b610-lerning-platform-server-side-kp-orus.vercel.app/course-detail/${params.id}`);
                 }
             },
             {path:"/faq",element:<FAQ></FAQ>},

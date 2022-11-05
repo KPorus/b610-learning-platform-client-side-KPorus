@@ -5,7 +5,7 @@ import CourseDetail from './CourseDetail';
 const Courses = () => {
     // const [state, setstate] = useState("");
     // useEffect(() => {
-    //     fetch('http://localhost:5000/allcourses')
+    //     fetch('https://b610-lerning-platform-server-side-kp-orus.vercel.app/allcourses')
     //     .then(res => res.json())
     //     .then(data => setstate(data))
     // }, []);
