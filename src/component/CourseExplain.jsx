@@ -7,12 +7,12 @@ const CourseExplain = () => {
     console.log(title);
     return (
       <div className='text-center'>
-          <div className="flex flex-col max-w-[85rem] p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 m-8">
+          <div className="flex flex-col max-w-[85rem] p-6 space-y-6 overflow-hidden rounded-lg shadow-md m-8">
             <div>
                 <img src={image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
                 <h2 className="mb-1 text-xl font-semibold">{title}</h2>
-                <p className="text-sm dark:text-gray-400">{description}</p>
-                <p className="mt-1 dark:text-gray-400 text-2xl font-medium">${price}</p>
+                <p className="text-sm ">{description}</p>
+                <p className="mt-1 text-2xl font-medium">${price}</p>
             </div>
             <div className="flex flex-wrap justify-between">
                 <div className="space-x-2 m-auto">
