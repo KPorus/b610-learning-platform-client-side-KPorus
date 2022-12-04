@@ -110,7 +110,7 @@ const Login = () => {
   }
 
   return (
-    <div className='hero min-h-screen sm:bg-base-200'>
+    <div className='hero min-h-screen font-bold'>
       <div className='hero-content flex-col lg:flex-row-reverse'>
         <div className='text-center lg:textcenter'>
           <h1 className='sm:text-5xl text-3xl font-bold'>Login now!</h1>
@@ -120,7 +120,7 @@ const Login = () => {
             Login Now to use our content.
           </p>
         </div>
-        <form className='card flex-shrink-0 sm:w-full w-[72%] max-w-sm shadow-2xl bg-base-100' onSubmit={handleSubmit}>
+        <form className='card flex-shrink-0 sm:w-full w-[72%] max-w-sm shadow-2xl ' onSubmit={handleSubmit}>
           <div className='card-body'>
             <div className='form-control'>
               <label className='label'>

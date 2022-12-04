@@ -7,15 +7,15 @@ const CheckOut = () => {
         toast.success("Your request of get acsess has been sent. Wait for the confirmation")
     }
     return (
-        <div className='text-center'>
-            <div className="hero min-h-screen bg-base-200">
+        <div className='text-center font-bold'>
+            <div className="hero min-h-screen ">
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-center">
                         <h1 className="text-5xl font-bold">Get Access Now!</h1>
                         <p className="py-6">Please fill up the check out form to 
                         get access of the course.</p>
                     </div>
-                    <div className="card flex-shrink-0 w-full md:max-w-sm shadow-2xl bg-base-100 max-w-[14rem]">
+                    <div className="card flex-shrink-0 w-full md:max-w-sm shadow-2xl  max-w-[14rem]">
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">

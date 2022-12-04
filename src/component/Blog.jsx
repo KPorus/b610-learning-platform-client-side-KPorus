@@ -3,10 +3,10 @@ import React from "react";
 const Blog = () => {
   return (
     <div>
-      <h1 className='text-5xl p-3 font-[Lato] font-bold text-gray-200 text-center'>
+      <h1 className='text-5xl p-3 font-[Lato] font-bold  text-center'>
         BLOG
       </h1>
-      <p className='text-2xl p-2 font-[Lato] font-medium text-gray-200 text-center'>
+      <p className='text-2xl p-2 font-[Lato] font-medium  text-center'>
         Here is some blog for recent populer question. Enjoy your self. Happy
         learing.
       </p>
@@ -16,7 +16,7 @@ const Blog = () => {
         <h1 className='text-3xl font-bold font-serif text-center text-white'>
           *Cross-Origin Resource Sharing
         </h1>
-        <p className='text-gray-200 font-serif'>
+        <p className=' font-serif'>
           Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism
           that allows a server to indicate any origins (domain, scheme, or port)
           other than its own from which a browser should permit loading
@@ -46,7 +46,7 @@ const Blog = () => {
           *Why are you using firebase? What other options do you have to
           implement authentication?
         </h1>
-        <p className='text-gray-200 font-serif'>
+        <p className=' font-serif'>
           Most apps need to know the identity of a user. Knowing a user's
           identity allows an app to securely save user data in the cloud and
           provide the same personalized experience across all of the user's
@@ -59,7 +59,7 @@ const Blog = () => {
         <div className='flex justify-around'>
           <img src='https://i.ibb.co/BzHjJxV/firebase11.jpg' alt='blog-2'></img>
         </div>
-        <p className='text-gray-200 font-serif'>
+        <p className=' font-serif'>
           Usually, authentication by a server entails the use of a user name and
           password.{" "}
           <span className='text-orange-600'>
@@ -74,7 +74,7 @@ const Blog = () => {
         <h1 className='text-3xl font-bold font-serif text-center text-white'>
           *How does the private route work?
         </h1>
-        <p className='text-gray-200 font-serif'>
+        <p className=' font-serif'>
           Private Routes in React Router (also called Protected Routes) require
           a user being authorized to visit a route (read: page). So if a user is
           not authorized for a specific page, they cannot access it. The most
@@ -91,7 +91,7 @@ const Blog = () => {
         <h1 className='text-3xl font-bold font-serif text-center text-white'>
           *What is Node? How does Node work?
         </h1>
-        <p className='text-gray-200 font-serif'>
+        <p className=' font-serif'>
           Node.js is an open-source backend javascript runtime environment. It
           is a used as backend service where javascript works on the server-side
           of the application. This way javascript is used on both frontend and

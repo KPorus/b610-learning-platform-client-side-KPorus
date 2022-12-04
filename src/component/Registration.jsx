@@ -91,7 +91,7 @@ const Registration = () => {
   }
 
     return (
-        <div className='hero min-h-screen bg-base-200' onSubmit={handleLogin}>
+        <div className='hero min-h-screen font-bold' onSubmit={handleLogin}>
       <div className='hero-content flex-col lg:flex-row-reverse'>
         <div className='text-center lg:textcenter'>
           <h1 className='text-5xl font-bold'>Register Now !</h1>
@@ -101,7 +101,7 @@ const Registration = () => {
             Register first to use our content.
           </p>
         </div>
-        <form className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
+        <form className='card flex-shrink-0 w-full max-w-sm shadow-2xl '>
           <div className='card-body'>
             <div className='form-control'>
             <label className='label'>

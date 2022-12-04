@@ -17,7 +17,7 @@ const Courses = () => {
     return (
         <div className='m-6 md:flex'>
             <div className='w-1/4'>
-                <ul className="menu bg-base-100 w-56 p-2 rounded-box">
+                <ul className="menu  w-56 p-2 rounded-box">
                     {
                         unique.map(n => 
                         <li key={n}>{

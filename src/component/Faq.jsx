@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Faq from "react-faq-component";
 
 const data = {
@@ -49,26 +49,25 @@ const data = {
     ],
 };
 
-const styles = {
-    bgColor: '#2A303C',
-    titleTextColor: "white",
-    rowTitleColor: "white",
-    rowContentColor: 'grey',
-    arrowColor: "red",
-};
+// const styles = {
+//     bgColor: '#2A303C',
+//     titleTextColor: "white",
+//     rowTitleColor: "white",
+//     rowContentColor: 'grey',
+//     arrowColor: "red",
+// };
 
 const config = {
-    // animate: true,
+    animate: true,
     // arrowIcon: "V",
-    // tabFocus: true
+    tabFocus: true
 };
 
 const FAQ = () => {
     return (
-        <div className="mx-9 mb-96 mt-12  bg-slate-800">
+        <div className="mx-9 mb-96 mt-12 p-4">
         <Faq
             data={data}
-            styles={styles}
             config={config}
         />
     </div>

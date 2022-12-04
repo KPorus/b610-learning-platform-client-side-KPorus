@@ -1,6 +1,5 @@
 import React, { useContext} from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import FAQ from "./FAQ"
 import { AuthContext } from "./Context/AuthProvider/AuthProvider";
 import Login from "./Login";
 
@@ -35,7 +34,7 @@ const Home = () => {
             </div>
             <h1 className="text-center font-bold font-[Lato] text-4xl m-2">Course Summary</h1>
             <div className="sm:flex sm:mx-32 ml-[1rem]  gap-2 p-4">
-                <div className='card card-compact md:w-96 mb-[2rem] bg-base-200 shadow-xl'>
+                <div className='card card-compact md:w-96 mb-[2rem]  shadow-xl'>
                     <figure>
                         <img src={data[0].image} alt='Shoes' />
                     </figure>
@@ -47,7 +46,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='card card-compact mb-[2rem] md:w-96 bg-base-200 shadow-xl'>
+                <div className='card card-compact mb-[2rem] md:w-96  shadow-xl'>
                     <figure>
                         <img src={data[1].image} alt='Shoes' />
                     </figure>
@@ -60,7 +59,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='card card-compact md:w-96 mb-[2rem] bg-base-200 shadow-xl'>
+                <div className='card card-compact md:w-96 mb-[2rem]  shadow-xl'>
                     <figure>
                         <img src={data[2].image} alt='Shoes' />
                     </figure>
