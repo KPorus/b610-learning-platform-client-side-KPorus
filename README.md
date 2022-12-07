@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Key Features: 
+
+•	Users can practice various quizzes and find the correct answer
+
+•	Firebase Authentication
+
+•	Create user type of Web experience
+
+•	Mobile-friendly and JWT security 
+
+Technology:  React, Tailwind, daisy UI, React –Dom, Mongo DB
+
+
 ## Available Scripts
 
 In the project directory, you can run:
