@@ -118,7 +118,7 @@ const Header = () => {
               src='https://img.icons8.com/fluency/48/000000/student-center.png'
               alt='nav'
             />
-            Student Center
+            ProgRise
           </Link>
         </div>
       </div>
